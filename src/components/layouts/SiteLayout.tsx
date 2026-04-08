@@ -1,13 +1,14 @@
 import type { FC, PropsWithChildren } from 'hono/jsx'
 import { SiteNavigation } from '../navigation/SiteNavigation'
 
-export const SiteLayout: FC<PropsWithChildren> = ({ children }) => {
+type SiteLayoutProps = PropsWithChildren
+
+export const SiteLayout: FC<SiteLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Simple Hono JSX</title>
         <style>{`
           :root {
             color-scheme: light;
@@ -73,10 +74,40 @@ export const SiteLayout: FC<PropsWithChildren> = ({ children }) => {
             box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
           }
 
+          .home-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.9fr);
+            gap: 24px;
+            align-items: start;
+          }
+
+          .home-grid__aside {
+            position: sticky;
+            top: 24px;
+          }
+
+          .home-grid__eyebrow {
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            color: #6b7280;
+          }
+
           code {
             background: #eef2ff;
             padding: 0.15rem 0.35rem;
             border-radius: 6px;
+          }
+
+          @media (max-width: 720px) {
+            .home-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .home-grid__aside {
+              position: static;
+            }
           }
         `}</style>
       </head>
