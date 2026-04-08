@@ -1,5 +1,5 @@
 name = "simple-hono"
-main = "src/app.ts"
+main = "src/app.tsx"
 compatibility_date = "2026-03-17"
 
 [[d1_databases]]
