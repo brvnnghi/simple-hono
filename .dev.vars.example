@@ -1,0 +1,3 @@
+# set deployed secret `npx wrangler secret put API_KEY`
+API_KEY=my-secret-key
+ENVIRONMENT=development
