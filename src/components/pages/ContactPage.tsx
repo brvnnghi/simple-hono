@@ -16,24 +16,33 @@ export const ContactPage: FC = () => {
             Contact
           </h1>
           <p className="leading-7 text-slate-600">
-            This is another server-rendered page using the same layout and
-            shared nav.
+            This page stays server-rendered, but it includes one small client
+            island below.
           </p>
 
           <p className="leading-7 text-slate-600">
-            You could add a form here later, but for now this is just a clean
-            template example.
+            The page content, layout, and navigation come from the server. Only
+            the counter widget mounts in the browser.
           </p>
           <ul className="grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
             <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
               Route: /contact
             </li>
             <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-              Same layout, new content
+              Rendering: SSR + island
             </li>
           </ul>
+
+          <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+            <p className="mb-4 text-sm font-medium text-slate-600">
+              Island example
+            </p>
+            <div data-island="contact-counter" />
+          </div>
         </div>
       </section>
+
+      <script type="module" src="/islands/contact.js" />
     </>
   )
 }

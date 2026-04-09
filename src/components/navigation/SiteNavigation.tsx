@@ -24,7 +24,9 @@ export const SiteNavigation: FC = () => {
         </strong>
         <div className="flex flex-wrap gap-3">
           {navItems.map((item) => {
-            const isActive = pathname === item.href
+            const isActive =
+              pathname === item.href ||
+              (item.href === '/app' && pathname.startsWith('/app/'))
             return (
               <a
                 key={item.href}

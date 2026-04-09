@@ -28,11 +28,20 @@ export const AboutPage: FC = () => {
               Route: /about
             </li>
             <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-              Rendered on the server
+              Rendering: SSR + island
             </li>
           </ul>
+
+          <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+            <p className="mb-4 text-sm font-medium text-slate-600">
+              Island example
+            </p>
+            <div data-island="rating-modal" />
+          </div>
         </div>
       </section>
+
+      <script type="module" src="/islands/about.js" />
     </>
   )
 }

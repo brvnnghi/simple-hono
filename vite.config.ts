@@ -10,12 +10,24 @@ export default defineConfig({
     emptyOutDir: false,
     rollupOptions: {
       input: {
+        aboutIsland: 'src/client/islands/about.tsx',
+        contactIsland: 'src/client/islands/contact.tsx',
         app: 'src/client/app/main.tsx',
       },
       output: {
-        entryFileNames: 'app/[name].js',
-        chunkFileNames: 'app/[name]-[hash].js',
-        assetFileNames: 'app/[name][extname]',
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === 'aboutIsland') {
+            return 'islands/about.js'
+          }
+
+          if (chunkInfo.name === 'contactIsland') {
+            return 'islands/contact.js'
+          }
+
+          return 'app/[name].js'
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name][extname]',
       },
     },
   },

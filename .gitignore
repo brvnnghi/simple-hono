@@ -9,3 +9,5 @@ coverage/
 *.log
 public/app.css
 public/app/
+public/islands/
+public/assets/
