@@ -11,3 +11,7 @@ database_name = "youhono-db"
 database_id = "7c4777d7-a2bf-4164-96bd-4a2a03753c7c"
 migrations_table = "d1_migrations"
 migrations_dir = "migrations"
+
+[[routes]]
+pattern = "hono.youhoc.com"
+custom_domain = true
