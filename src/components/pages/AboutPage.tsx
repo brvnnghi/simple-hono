@@ -9,21 +9,27 @@ export const AboutPage: FC = () => {
         content="About page for the simple Hono JSX example."
       />
 
-      <section className="card">
-        <div className="page-copy">
-          <h1>About</h1>
-          <p>
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-8">
+        <div className="space-y-6">
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
+            About
+          </h1>
+          <p className="leading-7 text-slate-600">
             This route uses the same server-side layout and navigation as the
             home page.
           </p>
 
-          <p>
+          <p className="leading-7 text-slate-600">
             In Express + EJS terms, this is like rendering a different
             template into the same shared layout.
           </p>
-          <ul>
-            <li>Route: /about</li>
-            <li>Rendered on the server</li>
+          <ul className="grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+            <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              Route: /about
+            </li>
+            <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              Rendered on the server
+            </li>
           </ul>
         </div>
       </section>

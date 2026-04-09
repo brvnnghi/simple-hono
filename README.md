@@ -11,8 +11,9 @@
 2. Install packages (`npm install`)
 3. Create `.dev.vars` to put vars and secrets in development
 4. Run `npx wrangler secret put VAR_NAME` to bind var in production
-5. Run `npm deploy`
-6. From v4, just make a new commit.
+5. Run `npm run dev`
+6. Run `npm run deploy`
+7. From v4, just make a new commit.
 
 # Versions
 
@@ -21,6 +22,14 @@
 - v3: app with 2 templates
 - v4: app with public folder and auto deployment
 - v5: app with Tailwind CSS and build on deployment
+
+# Tailwind CSS
+
+- Tailwind source lives in `src/styles/app.css`
+- Generated CSS is written to `public/app.css`
+- `public/app.css` is build output and is ignored by git
+- `npm run dev` starts both Tailwind watch mode and `wrangler dev`
+- `npm run deploy` builds Tailwind first, then runs `wrangler deploy`
 
 # To set automatic deployment to Cloudflare
 
