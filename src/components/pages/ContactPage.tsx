@@ -37,7 +37,15 @@ export const ContactPage: FC = () => {
             <p className="mb-4 text-sm font-medium text-slate-600">
               Island example
             </p>
-            <div data-island="contact-counter" />
+            <div data-island="contact-counter">
+              <div className="animate-pulse rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <div className="space-y-3">
+                  <div className="h-6 w-44 rounded bg-slate-200" />
+                  <div className="h-4 w-full max-w-sm rounded bg-slate-200" />
+                  <div className="h-10 w-28 rounded-full bg-slate-200" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
