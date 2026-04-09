@@ -19,9 +19,9 @@
 
 - v1: minimal starter app with some vars (api_key, enviroment, d1)
 - v2: app with a simple route and JSX template (server-side rendering)
-- v3: app with 2 templates
-- v4: app with public folder and auto deployment
-- v5: app with Tailwind CSS and build on deployment
+- v2.1: app with 2 templates
+- v3: app with public folder and auto deployment
+- v4: app with Tailwind CSS and build on deployment
 
 # Tailwind CSS
 

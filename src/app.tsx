@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 
 // import routes
 import siteRoute from './routes/siteRoute'
+import appRoute from './routes/appRoute'
 
 // import layout
 import { jsxRenderer } from 'hono/jsx-renderer'
@@ -17,5 +18,6 @@ app.use(
 )
 
 app.route('/', siteRoute)
+app.route('/app', appRoute)
 
 export default app

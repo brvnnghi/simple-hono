@@ -3,6 +3,7 @@ import { useRequestContext } from 'hono/jsx-renderer'
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/app', label: 'App' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]

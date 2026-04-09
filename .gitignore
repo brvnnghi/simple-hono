@@ -8,3 +8,4 @@ coverage/
 .DS_Store
 *.log
 public/app.css
+public/app/

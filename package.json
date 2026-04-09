@@ -2,11 +2,14 @@
   "name": "simple-hono",
   "version": "1.0.0",
   "scripts": {
+    "build": "npm run build:css && npm run build:client",
     "build:css": "npx @tailwindcss/cli -i ./src/styles/app.css -o ./public/app.css --minify",
+    "build:client": "vite build",
     "dev:css": "npx @tailwindcss/cli -i ./src/styles/app.css -o ./public/app.css --watch",
+    "dev:client": "vite build --watch",
     "dev:worker": "wrangler dev",
-    "dev": "concurrently -k -n css,worker \"npm:dev:css\" \"npm:dev:worker\"",
-    "deploy": "npm run build:css && wrangler deploy",
+    "dev": "concurrently -k -n css,client,worker \"npm:dev:css\" \"npm:dev:client\" \"npm:dev:worker\"",
+    "deploy": "npm run build && wrangler deploy",
     "types": "wrangler types"
   },
   "dependencies": {
@@ -16,6 +19,7 @@
     "@tailwindcss/cli": "^4.2.2",
     "concurrently": "^9.2.1",
     "tailwindcss": "^4.2.2",
+    "vite": "^7.1.10",
     "wrangler": "^4.78.0"
   }
 }
